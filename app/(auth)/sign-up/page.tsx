@@ -1,4 +1,5 @@
 'use client';
+import { CountrySelectField } from '@/components/forms/CountrySelectField';
 import InputField from '@/components/forms/InputField';
 import SelectField from '@/components/forms/SelectField';
 import { Button } from '@/components/ui/button';
@@ -73,7 +74,13 @@ const SignUp = () => {
           validation={{ required: 'Password is required.', minLength: 8 }}
         />
         {/* Country */}
-
+        <CountrySelectField
+          control={control}
+          label="Country"
+          name="country"
+          error={errors.country}
+          required
+        />
         {/* Investment Goals */}
         <SelectField
           name="investmentGoals"
